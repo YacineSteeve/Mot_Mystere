@@ -1,2 +1,2 @@
-# Mot_Mystere
+# Mot Mystère
 Un petit jeu pour passer le temps...
