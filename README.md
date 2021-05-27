@@ -1,2 +1,1 @@
-# Mot Mystère
-Un petit jeu pour passer le temps...
+Run main.cpp to play
