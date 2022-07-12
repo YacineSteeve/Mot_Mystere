@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Mot_Mystere.dir/functions.cpp.o"
+  "CMakeFiles/Mot_Mystere.dir/functions.cpp.o.d"
   "CMakeFiles/Mot_Mystere.dir/main.cpp.o"
+  "CMakeFiles/Mot_Mystere.dir/main.cpp.o.d"
   "Mot_Mystere"
   "Mot_Mystere.pdb"
 )

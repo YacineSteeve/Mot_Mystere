@@ -14,7 +14,7 @@ int main()
 
     cout << endl << endl;
     cout << "Bienvenue dans MYSTERY WORD !!" << endl << endl;
-    cout << "Les lettres d'un mot ont ete melangees. A vous de deviner quel etait ce mot. ";
+    cout << "Les lettres d'un mot ont ete mélangées. A vous de deviner quel était ce mot. ";
     cout << "Vous avez 5 essais. Bonne chance!" << endl << endl;
 
     do {
@@ -32,7 +32,7 @@ int main()
                     int tour(1);
                     bool ok = false;        //Pour savoir si le joueur a trouvé le bon mot (vrai) ou pas (faux).
 
-                    mot_alea(mot_mystere, ok);           //L'ordinateur chosit un mot.
+                    mot_alea(mot_mystere, ok);           //L'ordinateur choisit un mot.
                     melange = shuffle(mot_mystere);            //Récupère le mot mélangé.
                     mystere = tab_mystere(mot_mystere);     //Récupère le tableau contenant le mot mystère.
 
@@ -75,14 +75,14 @@ int main()
             default:
                 cout << "Vous ne pouvez choisir que l'option 1 ou l'option 2." << endl << "Que choisissez-vous?";
                 cout << endl << endl;
-                goto mark;      //Renvoie le joueur auc choix du mode si il entre autre chose que 1 et 2.
+                goto mark;      //Renvoie le joueur auc choix du mode s'il entre autre chose que 1 et 2.
         }
 
         replay = ask_replay();   //Demande au joueur s'il veut rejouer (changer de mode) et stocke sa décision dans le booléen "replay".
         cout << endl << endl;
     } while(replay);
 
-    cout << "A tres bientot!" << endl;
+    cout << "A tres bientôt!" << endl;
 
     return 0;
 }

@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/Mot_Mystere.dir/functions.cpp.o CMakeFiles/Mot_Mystere.dir/main.cpp.o  -o Mot_Mystere 
+/usr/bin/c++ -g CMakeFiles/Mot_Mystere.dir/functions.cpp.o CMakeFiles/Mot_Mystere.dir/main.cpp.o -o Mot_Mystere 
