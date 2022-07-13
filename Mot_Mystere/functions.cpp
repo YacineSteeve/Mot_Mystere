@@ -114,9 +114,9 @@ vector<char> shuffle(string mot_mystere)
     while(!mot_mystere.empty())
     {
         vector<char> tableau1;
-        for (int i(0); i < mot_mystere.size(); i++)
+        for (char & i : mot_mystere)
         {
-            tableau1.push_back(mot_mystere[i]);
+            tableau1.push_back(i);
         }
 
         int nombre_aleatoire, taille(tableau1.size());
@@ -136,9 +136,9 @@ void player2(vector<char> &mystere, vector<char> &melange, bool &ok)
     string mot, admin("admin");
 
     cout << "Quel est le mot mystère? ";
-    for (int i(0); i < melange.size(); i++)
+    for (char i : melange)
     {
-        cout << melange[i];
+        cout << i;
     }
     cout << endl;
     cin >> mot;
@@ -180,9 +180,9 @@ void player2(vector<char> &mystere, vector<char> &melange, bool &ok)
 vector<char> tab_mystere(string &mot_mystere)
 {
     vector<char> mystere;
-    for(int i(0); i < mot_mystere.size(); i++)
+    for(char & i : mot_mystere)
     {
-        mystere.push_back(mot_mystere[i]);
+        mystere.push_back(i);
     }
     return mystere;
 }
