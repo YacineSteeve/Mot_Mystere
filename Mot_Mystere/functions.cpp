@@ -4,6 +4,7 @@
 #include <ctime>
 #include <cstdlib>
 #include <vector>
+#include <random>
 #include "functions.h"
 using namespace std;
 
@@ -111,6 +112,10 @@ string player1(string mot_mystere)
 vector<char> shuffle(string mot_mystere)
 {
     vector<char> tableau2;
+    random_device rd;
+    mt19937 mt(rd());
+    uniform_int_distribution<unsigned long> dist(0, mot_mystere.size());
+
     while(!mot_mystere.empty())
     {
         vector<char> tableau1;
@@ -121,8 +126,7 @@ vector<char> shuffle(string mot_mystere)
 
         int nombre_aleatoire, taille(tableau1.size());
 
-        srand(time(nullptr));
-        nombre_aleatoire = rand() % taille;     //Prend aléatoirement un des indices des lettres du mot mystère.
+        nombre_aleatoire = int(dist(mt));     //Prend aléatoirement un des indices des lettres du mot mystère.
         tableau2.push_back(tableau1[nombre_aleatoire]);     //Ajoute au tableau 2 la lettre correspondant à cet indice.
         mot_mystere.erase(nombre_aleatoire, 1);        //Efface du mot mystère la lettre déjà prise.
     }
@@ -194,8 +198,11 @@ void mot_alea(string &mot_mystere, bool &ok)
     ifstream out_flux(dico);       //Crée un flux pour la lecture du dictionnaire.
     if(out_flux)
     {
-        srand(time(nullptr));        //Initialise le random.
-        position_alea = rand() % lignes;        //Choisit aléatoirement une ligne (donc un mot) du dictionnaire.
+        random_device rd;
+        mt19937 mt(rd());
+        uniform_int_distribution<int> dist(0, lignes);
+
+        position_alea = dist(mt);        //Choisit aléatoirement une ligne (donc un mot) du dictionnaire.
         while (indic < position_alea)           //Jusqu'à atteinte la ligne aléatoirement choisie.
         {
             mot_mystere.erase(0, ios::end);     //Efface le précédent contenu de la variable "mot_mystere".
