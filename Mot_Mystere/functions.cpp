@@ -1,8 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <ctime>
-#include <cstdlib>
 #include <vector>
 #include <random>
 #include "functions.h"
@@ -124,7 +122,7 @@ vector<char> shuffle(string mot_mystere)
             tableau1.push_back(i);
         }
 
-        int nombre_aleatoire, taille(tableau1.size());
+        int nombre_aleatoire;
 
         nombre_aleatoire = int(dist(mt));     //Prend aléatoirement un des indices des lettres du mot mystère.
         tableau2.push_back(tableau1[nombre_aleatoire]);     //Ajoute au tableau 2 la lettre correspondant à cet indice.
