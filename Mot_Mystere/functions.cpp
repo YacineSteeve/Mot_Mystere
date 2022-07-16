@@ -110,12 +110,13 @@ string player1(string mot_mystere)
 vector<char> shuffle(string mot_mystere)
 {
     vector<char> tableau2;
-    random_device rd;
-    mt19937 mt(rd());
-    uniform_int_distribution<unsigned long> dist(0, mot_mystere.size());
 
     while(!mot_mystere.empty())
     {
+        random_device rd;
+        mt19937 mt(rd());
+        uniform_int_distribution<unsigned long> dist(0, mot_mystere.size());
+
         vector<char> tableau1;
         for (char & i : mot_mystere)
         {
@@ -192,9 +193,9 @@ vector<char> tab_mystere(string &mot_mystere)
 void mot_alea(string &mot_mystere, bool &ok)
 {
     int position_alea, indic(0), lignes(323577) /* Nombre de lignes (de mots) dans le dictionnaire */;
-    string const dico("/home/yacine/CLionProjects/Mot_Mystere/dico.txt");   //Récupère le fichier dictionnaire.
-    ifstream out_flux(dico);       //Crée un flux pour la lecture du dictionnaire.
-    if(out_flux)
+    ifstream dico("/home/yacine/CLionProjects/Mot_Mystere/Mot_Mystere/dico.txt");     //Récupère le fichier dictionnaire.
+
+    if(dico.is_open())
     {
         random_device rd;
         mt19937 mt(rd());
@@ -204,10 +205,14 @@ void mot_alea(string &mot_mystere, bool &ok)
         while (indic < position_alea)           //Jusqu'à atteinte la ligne aléatoirement choisie.
         {
             mot_mystere.erase(0, ios::end);     //Efface le précédent contenu de la variable "mot_mystere".
-            out_flux >> mot_mystere;                //Récupère une ligne du dico dans la variable "mot_mystere"
+            dico >> mot_mystere;                //Récupère une ligne du dico dans la variable "mot_mystere"
                                                     //Ce qui correspond à un déplacement du curseur.
             indic++;
         }
+
+        cout << "--Ordinateur--" << endl << "Mot mystère choisi." << endl << endl << endl;
+
+        dico.close();
     }
     else
     {

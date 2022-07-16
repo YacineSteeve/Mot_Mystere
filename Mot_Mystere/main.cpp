@@ -36,8 +36,6 @@ int main()
                     melange = shuffle(mot_mystere);            //Récupère le mot mélangé.
                     mystere = tab_mystere(mot_mystere);     //Récupère le tableau contenant le mot mystère.
 
-                    cout << "--Ordinateur--" << endl << "Mot mystère choisi." << endl << endl << endl;
-
                     cout << "--Joueur 2--" << endl;
                     while (tour <= essais_max && !ok)
                     {
